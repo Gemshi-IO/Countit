@@ -31,6 +31,142 @@
             margin: 0 10px;
             text-decoration: none;
         }
+
+        /* Enhanced base styles */
+        .help-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .feature {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        section {
+            margin-bottom: 40px;
+        }
+        
+        h2 {
+            color: #333;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        h3 {
+            color: #444;
+            margin-top: 30px;
+        }
+        
+        h4 {
+            color: #555;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .help-content {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            h3 {
+                font-size: 1.3em;
+            }
+            
+            .feature {
+                padding: 15px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .navbar {
+                padding: 15px 10px;
+            }
+            
+            .navbar a {
+                margin: 5px;
+                font-size: 0.9em;
+            }
+            
+            .help-content {
+                padding: 10px;
+                font-size: 0.95em;
+            }
+            
+            .feature {
+                padding: 12px;
+                margin-bottom: 20px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            h2 {
+                font-size: 1.4em;
+            }
+            
+            h3 {
+                font-size: 1.2em;
+            }
+        }
+
+        /* Additional enhancements */
+        a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        .support-contact {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .feature, .support-contact {
+                background: #2a2a2a;
+                color: #fff;
+            }
+            
+            body {
+                background-color: #1a1a1a;
+                color: #fff;
+            }
+            
+            h1, h2, h3, h4 {
+                color: #fff;
+            }
+        }
     </style>
 </head>
 <body>
@@ -45,7 +181,41 @@
     </div>
 
     <h1>Help & Support</h1>
-    <p>If you need assistance, please visit our support page or contact us directly. We're here to help you make the most of the app.</p>
-    <!-- Additional help content as needed -->
+    
+    <div class="help-content">
+        <h2>Welcome to the Help & Support Center</h2>
+        
+        <section class="purpose">
+            <h3>Purpose of the App</h3>
+            <p>Our app is designed to help you track anything in your daily life, whether you're working to build positive routines, monitor behaviors, or simply keep tabs on various activities. With the ability to log and report on the frequency and timing of your actions, you gain clear insights into patterns and trends. The app lets you review your activities over daily, weekly, monthly, and yearly timeframes, offering a comprehensive view of your consistency and progress in any area you choose to monitor.</p>
+        </section>
+
+        <section class="usage">
+            <h3>How to Use the App</h3>
+            
+            <div class="feature">
+                <h4>Adding a Habit</h4>
+                <p>Start by creating a new habit from the home screen by pressing the + button on top. Alternatively, a new habit can also be created from the Settings menu. You can choose an activity name, custom icon, and color for the habit. The habit/activity could be anything that you want to count. It doesn't matter what.</p>
+            </div>
+
+            <div class="feature">
+                <h4>Habit Types: Positive and Negative</h4>
+                <p>When adding or editing a habit, the app tries to auto-detect whether it's a positive or negative habit, but you can also manually select it. This helps in personalizing your trend summary and reflections based on the type of habit you're tracking.</p>
+            </div>
+
+            <div class="feature">
+                <h4>Logging Habits</h4>
+                <p>Once your habits are set up, simply tap on them to log an entry. Each log captures the time and date for easy reference. You can track various habits simultaneously. Long pressing the icon will give options to undo the last log and catchup on missed.</p>
+            </div>
+
+            <!-- Add all other sections similarly -->
+        </section>
+
+        <section class="support-contact">
+            <h3>Support</h3>
+            <p>If you run into any issues or have questions about using the app, or want any new features added, feel free to reach out to me at <a href="mailto:gemshi@icloud.com">gemshi@icloud.com</a>. I will try my best to help you out.</p>
+            <p class="copyright">© Gemshi 2024</p>
+        </section>
+    </div>
 </body>
 </html>

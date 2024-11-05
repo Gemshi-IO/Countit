@@ -148,6 +148,270 @@
                 max-width: 300px;
             }
         }
+
+        /* Features Grid */
+        .features-section {
+            padding: 60px 20px;
+            background-color: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-card li {
+            margin: 10px 0;
+            color: #666;
+        }
+
+        /* Use Cases */
+        .use-cases-section {
+            background-color: #f8f9fa;
+            padding: 60px 20px;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .use-case {
+            text-align: center;
+            padding: 30px;
+        }
+
+        /* Premium Features */
+        .premium-section {
+            background-color: #333;
+            color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .premium-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid, .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-card {
+                margin: 10px;
+            }
+        }
+
+        /* Add these responsive styles to your existing <style> section */
+
+        /* Tablet and smaller desktop screens */
+        @media screen and (max-width: 1024px) {
+            .main-section {
+                padding: 40px 20px;
+            }
+
+            .hero-content {
+                gap: 20px;
+            }
+
+            .app-screen {
+                max-width: 350px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text {
+                font-size: 1.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+                padding: 30px 20px;
+            }
+        }
+
+        /* Mobile devices */
+        @media screen and (max-width: 768px) {
+            /* Navbar adjustments */
+            .navbar {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .navbar > div {
+                margin: 5px 0;
+            }
+
+            /* Hero section adjustments */
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left-content {
+                text-align: center;
+                padding: 10px;
+            }
+
+            .app-screen {
+                max-width: 300px;
+                margin: 20px auto;
+            }
+
+            /* Features section adjustments */
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+            }
+
+            .feature-card {
+                padding: 20px;
+            }
+
+            /* Use cases section adjustments */
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 20px 15px;
+            }
+
+            .use-case {
+                padding: 20px;
+            }
+
+            /* Typography adjustments */
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+                margin-bottom: 30px;
+            }
+
+            h3 {
+                font-size: 1.4rem;
+            }
+
+            .hero-text {
+                font-size: 1.1rem;
+                margin: 15px 0 25px 0;
+            }
+        }
+
+        /* Small mobile devices */
+        @media screen and (max-width: 480px) {
+            /* Further refinements for very small screens */
+            .navbar a {
+                font-size: 0.9rem;
+                margin: 0 5px;
+            }
+
+            .app-logo {
+                width: 80px;
+            }
+
+            .get-ios {
+                width: 130px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .feature-card, .use-case {
+                padding: 15px;
+            }
+
+            .feature-icon {
+                font-size: 2rem;
+            }
+
+            .premium-section {
+                padding: 40px 15px;
+            }
+
+            .footer {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Ensure smooth transitions */
+        .hero-content, .feature-card, .use-case {
+            transition: all 0.3s ease;
+        }
+
+        /* Print styles */
+        @media print {
+            .navbar, .footer, .cta-button {
+                display: none;
+            }
+
+            body {
+                background-color: white;
+                color: black;
+            }
+
+            .app-screen {
+                max-width: 300px;
+            }
+
+            .feature-card, .use-case {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -166,8 +430,8 @@
         <div class="hero-content">
             <div class="left-content">
                 <img src="CountItLogo.png" alt="App Logo" class="app-logo">
-                <h1>Count it. Track it.</h1>
-                <p class="hero-text">Stay on top of your habits and reach your goals with ease.</p>
+                <h1>CountIt</h1>
+                <p class="hero-text">Your Personal Habit Tracking Companion</p>
                 <img src="getios.png" alt="Download on iOS" class="get-ios">
             </div>
             <div class="right-content">
@@ -176,10 +440,84 @@
         </div>
     </section>
 
+    <!-- Features Grid -->
+    <section class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="feature-icon">📊</i>
+                <h3>Smart Habit Tracking</h3>
+                <ul>
+                    <li>Track any habit with customizable icons and colors</li>
+                    <li>Intelligent categorization for different types of habits</li>
+                    <li>Easy-to-use interface for quick logging</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <i class="feature-icon">📈</i>
+                <h3>Comprehensive Analytics</h3>
+                <ul>
+                    <li>Detailed trend summaries: Daily, Weekly, Monthly, and Yearly insights</li>
+                    <li>Visual charts and statistics to track your progress</li>
+                    <li>Smart reflections tailored to your habit type</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="feature-icon">🎨</i>
+                <h3>Personalization</h3>
+                <ul>
+                    <li>Choose from a wide range of emojis and colors</li>
+                    <li>Customize your tracking experience</li>
+                    <li>Support for multiple habit categories</li>
+                </ul>
+            </div>
+
+            <div class="feature-card">
+                <i class="feature-icon">🔒</i>
+                <h3>Privacy-Focused</h3>
+                <ul>
+                    <li>All data stored locally on your device</li>
+                    <li>No account required</li>
+                    <li>Your habits, your privacy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases-section">
+        <h2>Transform Your Life</h2>
+        <div class="use-cases-grid">
+            <div class="use-case">
+                <h3>Health & Fitness</h3>
+                <p>Track workouts, water intake, and healthy eating habits</p>
+            </div>
+            <div class="use-case">
+                <h3>Personal Development</h3>
+                <p>Monitor reading, learning, and meditation practices</p>
+            </div>
+            <div class="use-case">
+                <h3>Productivity</h3>
+                <p>Enhance work routines and daily task management</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Features -->
+    <section class="premium-section">
+        <h2>Unlock Premium Features</h2>
+        <div class="premium-content">
+            <p>Get access to advanced analytics, unlimited habits, and data export capabilities</p>
+            <a href="#" class="cta-button">Upgrade to Premium</a>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="main-section">
         <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us at <a href="mailto:support@example.com">support@example.com</a></p>
+        <p>Have questions? Reach out to us at <a href="mailto:gemshi@icloud.com" style="color: inherit; font-weight: bold;">our email</a></p>
     </section>
 
     <!-- Footer -->

@@ -31,6 +31,55 @@
             margin: 0 10px;
             text-decoration: none;
         }
+
+        .privacy-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .last-updated {
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 30px;
+        }
+        
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .privacy-content {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .navbar {
+                padding: 15px 10px;
+            }
+            
+            .navbar a {
+                margin: 5px;
+                font-size: 0.9em;
+            }
+            
+            .privacy-content {
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -45,7 +94,19 @@
     </div>
 
     <h1>Privacy Policy</h1>
-    <p>We value your privacy and are committed to protecting your data. Our app ensures your information is secure and private.</p>
-    <!-- Additional privacy content as needed -->
+
+    <div class="privacy-content">
+        <p>Your privacy is important to us. This app does not collect, store, or share any personal data. No user information is tracked or shared with third parties. However, during the premium subscription purchase process, Apple may collect certain information as outlined in their privacy policy.</p>
+        
+        <p>The app offers a premium subscription to unlock additional features. All transactions are securely processed through Apple's in-app purchase system, and we do not have access to your payment information.</p>
+        
+        <p>Although we do not collect any personal data, you have the right to request access to or deletion of your personal data if it were to be collected. For any questions regarding this privacy policy, feel free to contact us.</p>
+        
+        <p>In a nutshell: I'm not interested in your personal life, and your data is yours alone. I'm just here to provide you with a great app experience!</p>
+        
+        <p>Contact: gemshi@icloud.com</p>
+        
+        <p class="last-updated">Last updated: 23 October 2024</p>
+    </div>
 </body>
 </html>
