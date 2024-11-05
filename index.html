@@ -11,7 +11,7 @@
             background-color: #EAE3C9; /* Light beige background */
             color: #333;
         }
-        
+
         /* Navbar */
         .navbar {
             display: flex;
@@ -21,7 +21,7 @@
             background-color: #333;
             color: #fff;
         }
-        
+
         .navbar a {
             color: #fff;
             margin: 0 10px;
@@ -31,25 +31,28 @@
         /* Main Section */
         .main-section {
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px; /* Reduced padding for less vertical space */
         }
 
         /* App Logo */
         .app-logo {
-            width: 100px; /* Decrease the size of the App Logo */
-            margin-bottom: 20px;
+            width: 80px; /* Smaller App Logo */
+            margin-bottom: 10px;
         }
 
         /* App Screen */
         .app-screen {
-            width: 80%; /* Increase the size of the App Screen */
-            max-width: 500px; /* Set a maximum width to keep it responsive */
-            margin-bottom: 20px;
+            width: 80%;
+            max-width: 500px;
+            margin-bottom: 10px;
         }
 
+        /* Get iOS Image */
         .get-ios {
-            width: 70px;  
-            margin-bottom: 20px;
+            width: 100px; /* Increased size for iOS badge */
+            margin: 20px auto 10px;
+            display: block;
+        }
 
         h1 {
             font-size: 2.5rem;
@@ -59,6 +62,7 @@
         p {
             font-size: 1.1rem;
             color: #666;
+            margin-top: 10px;
         }
 
         /* Button Styles */
@@ -71,6 +75,7 @@
             border-radius: 5px;
             cursor: pointer;
             text-decoration: none;
+            display: inline-block;
         }
 
         .cta-button:hover {
@@ -102,32 +107,19 @@
     <div class="navbar">
         <div><a href="#">Count It. Track It.</a></div>
         <div>
-            <a href="#privacy">Privacy</a>
-            <a href="#help">Help</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="help.html">Help</a>
             <a href="#contact">Contact</a>
         </div>
     </div>
 
     <!-- Main Section -->
     <section class="main-section">
-        <img src="CountItLogo.png" alt="App Logo" class="app-logo"> <!-- Reduced logo size -->
+        <img src="CountItLogo.png" alt="App Logo" class="app-logo">
         <h1>Count it. Track it.</h1>
-        <img src="Frame.png" alt="App Screen" class="app-screen"> <!-- Enlarged screen size -->
-         <img src="getios.png" alt="IOS" class="get-ios">
+        <img src="Frame.png" alt="App Screen" class="app-screen">
+        <img src="getios.png" alt="Download on iOS" class="get-ios">
         <p>Stay on top of your habits and reach your goals with ease.</p>
-        
-    </section>
-
-    <!-- Privacy Section -->
-    <section id="privacy" class="main-section">
-        <h2>Privacy Policy</h2>
-        <p>We value your privacy and are committed to protecting your data. Our app ensures your information is secure and private.</p>
-    </section>
-
-    <!-- Help Section -->
-    <section id="help" class="main-section">
-        <h2>Help & Support</h2>
-        <p>If you need assistance, please visit our support page or contact us directly. We're here to help you make the most of the app.</p>
     </section>
 
     <!-- Contact Section -->
@@ -140,8 +132,8 @@
     <div class="footer">
         <p>&copy; 2024 Count It. Track It. All rights reserved.</p>
         <p>
-            <a href="#privacy">Privacy Policy</a> |
-            <a href="#help">Help</a> |
+            <a href="privacy.html">Privacy Policy</a> |
+            <a href="help.html">Help</a> |
             <a href="#contact">Contact</a>
         </p>
     </div>
