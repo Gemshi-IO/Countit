@@ -34,8 +34,16 @@
             padding: 60px 20px;
         }
 
-        .main-section img {
-            width: 150px;
+        /* App Logo */
+        .app-logo {
+            width: 100px; /* Decrease the size of the App Logo */
+            margin-bottom: 20px;
+        }
+
+        /* App Screen */
+        .app-screen {
+            width: 80%; /* Increase the size of the App Screen */
+            max-width: 500px; /* Set a maximum width to keep it responsive */
             margin-bottom: 20px;
         }
 
@@ -98,10 +106,9 @@
 
     <!-- Main Section -->
     <section class="main-section">
-        <img src="counticon.png" alt="App Logo"> <!-- Replace with actual logo path -->
+        <img src="counticon.png" alt="App Logo" class="app-logo"> <!-- Reduced logo size -->
         <h1>Count it. Track it.</h1>
-        <img src="Frame.png" alt="App Screen"> <!-- Replace with actual logo path -->
-
+        <img src="Frame.png" alt="App Screen" class="app-screen"> <!-- Enlarged screen size -->
         <p>Stay on top of your habits and reach your goals with ease.</p>
         <a href="#" class="cta-button">Get Started</a>
     </section>
@@ -110,21 +117,18 @@
     <section id="privacy" class="main-section">
         <h2>Privacy Policy</h2>
         <p>We value your privacy and are committed to protecting your data. Our app ensures your information is secure and private.</p>
-        <!-- More content as needed -->
     </section>
 
     <!-- Help Section -->
     <section id="help" class="main-section">
         <h2>Help & Support</h2>
         <p>If you need assistance, please visit our support page or contact us directly. We're here to help you make the most of the app.</p>
-        <!-- More content as needed -->
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="main-section">
         <h2>Contact Us</h2>
         <p>Have questions? Reach out to us at <a href="mailto:support@example.com">support@example.com</a></p>
-        <!-- More content as needed -->
     </section>
 
     <!-- Footer -->
@@ -138,4 +142,3 @@
     </div>
 </body>
 </html>
-
