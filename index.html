@@ -30,28 +30,53 @@
 
         /* Main Section */
         .main-section {
-            text-align: center;
-            padding: 40px 20px; /* Reduced padding for less vertical space */
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .left-content {
+            flex: 1;
+            text-align: left;
+            padding: 20px;
+        }
+
+        .right-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
         }
 
         /* App Logo */
         .app-logo {
-            width: 80px; /* Smaller App Logo */
-            margin-bottom: 10px;
+            width: 100px;
+            margin-bottom: 20px;
         }
 
         /* App Screen */
         .app-screen {
-            width: 80%;
-            max-width: 500px;
-            margin-bottom: 10px;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
         }
 
         /* Get iOS Image */
         .get-ios {
-            width: 100px; /* Increased size for iOS badge */
-            margin: 20px auto 10px;
-            display: block;
+            width: 150px;
+            transition: transform 0.2s ease;
+        }
+
+        .get-ios:hover {
+            transform: scale(1.05);
         }
 
         h1 {
@@ -100,6 +125,29 @@
         .footer a:hover {
             text-decoration: underline;
         }
+
+        /* Updated Typography */
+        .hero-text {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            margin: 20px 0 30px 0;
+            color: #444;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .left-content {
+                text-align: center;
+            }
+
+            .app-screen {
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -115,11 +163,17 @@
 
     <!-- Main Section -->
     <section class="main-section">
-        <img src="CountItLogo.png" alt="App Logo" class="app-logo">
-        <h1>Count it. Track it.</h1>
-        <img src="Frame.png" alt="App Screen" class="app-screen">
-        <img src="getios.png" alt="Download on iOS" class="get-ios">
-        <p>Stay on top of your habits and reach your goals with ease.</p>
+        <div class="hero-content">
+            <div class="left-content">
+                <img src="CountItLogo.png" alt="App Logo" class="app-logo">
+                <h1>Count it. Track it.</h1>
+                <p class="hero-text">Stay on top of your habits and reach your goals with ease.</p>
+                <img src="getios.png" alt="Download on iOS" class="get-ios">
+            </div>
+            <div class="right-content">
+                <img src="Frame.png" alt="App Screen" class="app-screen">
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
