@@ -3,10 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Count It. Track It.</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4e7d4; /* Light beige background */
+            color: #333;
+        }
+        
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .navbar a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        /* Main Section */
+        .main-section {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .main-section img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Button Styles */
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #0073e6;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background-color: #005bb5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <button onclick="window.location.href='privacy.html'">Go to Privacy Page</button>
+    <!-- Navbar -->
+    <div class="navbar">
+        <div><a href="#">Count It. Track It.</a></div>
+        <div>
+            <a href="#privacy">Privacy</a>
+            <a href="#help">Help</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <section class="main-section">
+        <img src="path_to_logo.png" alt="App Logo"> <!-- Replace with actual logo path -->
+        <h1>Count it. Track it.</h1>
+        <p>Stay on top of your habits and reach your goals with ease.</p>
+        <a href="#" class="cta-button">Get Started</a>
+    </section>
+
+    <!-- Privacy Section -->
+    <section id="privacy" class="main-section">
+        <h2>Privacy Policy</h2>
+        <p>We value your privacy and are committed to protecting your data. Our app ensures your information is secure and private.</p>
+        <!-- More content as needed -->
+    </section>
+
+    <!-- Help Section -->
+    <section id="help" class="main-section">
+        <h2>Help & Support</h2>
+        <p>If you need assistance, please visit our support page or contact us directly. We're here to help you make the most of the app.</p>
+        <!-- More content as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="main-section">
+        <h2>Contact Us</h2>
+        <p>Have questions? Reach out to us at <a href="mailto:support@example.com">support@example.com</a></p>
+        <!-- More content as needed -->
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Count It. Track It. All rights reserved.</p>
+        <p>
+            <a href="#privacy">Privacy Policy</a> |
+            <a href="#help">Help</a> |
+            <a href="#contact">Contact</a>
+        </p>
+    </div>
 </body>
 </html>
+
