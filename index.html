@@ -65,8 +65,14 @@
             width: 100%;
             max-width: 400px;
             height: auto;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                        0 8px 24px -8px rgba(0, 0, 0, 0.15);
             border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .app-screen:hover {
+            transform: translateY(-5px);
         }
 
         /* Get iOS Image */
@@ -120,6 +126,11 @@
             color: #fff;
             text-decoration: none;
             margin: 0 10px;
+            font-size: 0.9rem;
+        }
+
+        .footer p {
+            font-size: 0.95rem;
         }
 
         .footer a:hover {
@@ -152,7 +163,7 @@
         /* Features Grid */
         .features-section {
             padding: 60px 20px;
-            background-color: #fff;
+            background-color: #EAE3C9; /* Changed from #fff to match body background */
         }
 
         .features-grid {
@@ -165,7 +176,7 @@
         }
 
         .feature-card {
-            background: #fff;
+            background: #fff;  /* Keep white background for cards to stand out */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
@@ -412,6 +423,131 @@
                 page-break-inside: avoid;
             }
         }
+
+        /* Update the cta-button style in the premium section */
+        .premium-section .cta-button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #D1C4A3; /* Darker shade of #EAE3C9 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .premium-section .cta-button:hover {
+            background-color: #C4B696; /* Even darker on hover */
+        }
+
+        /* Add these new styles */
+        .donation-section {
+            padding: 40px 20px;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .donation-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .donation-text {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .eth-address {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .eth-address code {
+            font-family: monospace;
+            color: #333;
+        }
+
+        .copy-button {
+            padding: 5px 15px;
+            background: #D1C4A3;
+            border: none;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .copy-button:hover {
+            background: #C4B696;
+        }
+
+        .donation-caption {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 15px;
+        }
+
+        /* Enhanced feature cards */
+        .feature-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Enhanced use cases section */
+        .use-cases-section {
+            background-color: #fff;
+            padding: 60px 20px;
+        }
+
+        .use-case {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateY(-3px);
+        }
+
+        /* Enhanced typography */
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        /* Enhanced spacing */
+        section {
+            margin-bottom: 40px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body>
@@ -520,6 +656,20 @@
         <p>Have questions? Reach out to us at <a href="mailto:gemshi@icloud.com" style="color: inherit; font-weight: bold;">our email</a></p>
     </section>
 
+    <!-- Add this before the footer -->
+    <section class="donation-section">
+        <div class="donation-content">
+            <h3>Support the Development</h3>
+            <p class="donation-text">If you find CountIt helpful, consider supporting its development</p>
+            <div class="eth-address">
+                <span>ETH:</span>
+                <code>0x943FA945b349fc6c426f63d4772580f50368d957</code>
+                <button class="copy-button" onclick="copyAddress()">Copy</button>
+            </div>
+            <p class="donation-caption">Your support helps maintain and improve CountIt ❤️</p>
+        </div>
+    </section>
+
     <!-- Footer -->
     <div class="footer">
         <p>&copy; 2024 Count It. Track It. All rights reserved.</p>
@@ -529,5 +679,15 @@
             <a href="#contact">Contact</a>
         </p>
     </div>
+
+    <!-- Add this script at the end of body -->
+    <script>
+    function copyAddress() {
+        navigator.clipboard.writeText('0x943FA945b349fc6c426f63d4772580f50368d957');
+        const button = document.querySelector('.copy-button');
+        button.textContent = 'Copied!';
+        setTimeout(() => button.textContent = 'Copy', 2000);
+    }
+    </script>
 </body>
 </html>
