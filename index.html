@@ -8,7 +8,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #EAE3C9;  Light beige background */
+            background-color: #EAE3C9; /* Light beige background */
             color: #333;
         }
 
@@ -18,12 +18,12 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: #333;
+            background-color: #000; /* Changed to black */
             color: #fff;
         }
 
         .navbar a {
-            color: #fff;
+            color: #fff; /* Keep text color white */
             margin: 0 10px;
             text-decoration: none;
         }
@@ -101,7 +101,7 @@
             padding: 10px 20px;
             font-size: 1rem;
             color: #fff;
-            background-color: #212121; /*#0073e6;*/
+            background-color: #0073e6;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -118,12 +118,12 @@
             text-align: center;
             padding: 20px;
             margin-top: 40px;
-            background-color: #333;
-            color: #fff;
+            background-color: #000; /* Changed to black */
+            color: #fff; /* Keep text color white */
         }
 
         .footer a {
-            color: #fff;
+            color: #fff; /* Keep text color white */
             text-decoration: none;
             margin: 0 10px;
             font-size: 0.9rem;
@@ -176,11 +176,12 @@
         }
 
         .feature-card {
-            background: #fff;  /* Keep white background for cards to stand out */
+            background: #f9f9f9;  /* Changed to a warmer white */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
         }
 
         .feature-card:hover {
@@ -210,22 +211,47 @@
 
         /* Use Cases */
         .use-cases-section {
-            background-color: #f8f9fa;
-            padding: 60px 20px;
+            background-color: #f0f4f8; /* Light background color */
+            padding: 60px 20px; /* Increased padding */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
 
         .use-cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
+            gap: 30px; /* Space between cards */
         }
 
         .use-case {
-            text-align: center;
-            padding: 30px;
+            background: #ffffff; /* White background for cards */
+            border-radius: 12px; /* Rounded corners for cards */
+            padding: 20px; /* Padding inside cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for cards */
+        }
+
+        .use-case:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+        }
+
+        h2 {
+            text-align: center; /* Center the section title */
+            margin-bottom: 40px; /* Space below the title */
+            font-size: 2.5rem; /* Larger font size for the title */
+            color: #333; /* Dark color for the title */
+        }
+
+        h3 {
+            font-size: 1.6rem; /* Slightly larger font size for headings */
+            color: #444; /* Darker color for headings */
+            margin-bottom: 10px; /* Space below headings */
+        }
+
+        p {
+            font-size: 1rem; /* Standard font size for paragraphs */
+            color: #666; /* Gray color for text */
         }
 
         /* Premium Features */
@@ -239,11 +265,6 @@
         .premium-content {
             max-width: 800px;
             margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
         }
 
         @media (max-width: 768px) {
@@ -428,7 +449,7 @@
         .premium-section .cta-button {
             padding: 10px 20px;
             font-size: 1rem;
-            color: #fff;
+            color: #000; /* Change text color to black */
             background-color: #D1C4A3; /* Darker shade of #EAE3C9 */
             border: none;
             border-radius: 5px;
@@ -443,19 +464,26 @@
 
         /* Add these new styles */
         .donation-section {
-            padding: 40px 20px;
-            background-color: #fff;
+            background-color: #f9f9f9; /* Warm white */
+            padding: 20px 10px; /* Reduced padding */
             text-align: center;
         }
 
         .donation-content {
-            max-width: 800px;
+            max-width: 600px; /* Optionally reduce max width */
             margin: 0 auto;
         }
 
         .donation-text {
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 10px; /* Reduced margin */
+            font-size: 0.9rem; /* Optionally reduce font size */
+        }
+
+        .donation-caption {
+            font-size: 0.8rem; /* Optionally reduce font size */
+            color: #888;
+            margin-top: 10px; /* Reduced margin */
         }
 
         .eth-address {
@@ -487,15 +515,9 @@
             background: #C4B696;
         }
 
-        .donation-caption {
-            font-size: 0.9rem;
-            color: #888;
-            margin-top: 15px;
-        }
-
         /* Enhanced feature cards */
         .feature-card {
-            background: #fff;
+            background: #f9f9f9;  /* Changed to a warmer white */
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -511,7 +533,7 @@
 
         /* Enhanced use cases section */
         .use-cases-section {
-            background-color: #fff;
+            background-color: #f9f9f9; /* Changed to warm white */
             padding: 60px 20px;
         }
 
@@ -547,6 +569,52 @@
         /* Smooth scrolling */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Update the premium content text color */
+        .premium-content p {
+            color: #fff; /* Change text color to white */
+        }
+
+        /* Centering the contact text */
+        .contact-text {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Enhanced Use Cases Section */
+        .use-cases-section {
+            background-color: #f9f9f9; /* Changed to warm white */
+            padding: 60px 20px;
+        }
+
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .use-case {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .use-case:hover {
+            transform: translateY(-3px);
+        }
+
+        .use-case h3 {
+            font-size: 1.5rem;
+            color: #444;
+            margin-bottom: 1rem;
+        }
+
+        .use-case p {
+            font-size: 1.1rem;
+            color: #666;
         }
     </style>
 </head>
@@ -638,6 +706,10 @@
                 <h3>Productivity</h3>
                 <p>Enhance work routines and daily task management</p>
             </div>
+            <div class="use-case">
+                <h3>Tracking Negative Habits</h3>
+                <p>Identify and monitor negative habits to help reduce their frequency and impact on your life.</p>
+            </div>
         </div>
     </section>
 
@@ -645,7 +717,7 @@
     <section class="premium-section">
         <h2>Unlock Premium Features</h2>
         <div class="premium-content">
-            <p>Get access to advanced analytics, unlimited habits, and data export capabilities</p>
+            <p style="color: #fff;">Get access to advanced analytics, unlimited habits, and data export capabilities</p>
             <a href="#" class="cta-button">Upgrade to Premium</a>
         </div>
     </section>
@@ -653,7 +725,7 @@
     <!-- Contact Section -->
     <section id="contact" class="main-section">
         <h2>Contact Us</h2>
-        <p>Have questions? Reach out to us at <a href="mailto:gemshi@icloud.com" style="color: inherit; font-weight: bold;">our email</a></p>
+        <p class="contact-text">Have questions? Reach out to us at <a href="mailto:gemshi@icloud.com" style="color: inherit; font-weight: bold;">our email</a></p>
     </section>
 
     <!-- Add this before the footer -->
