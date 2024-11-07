@@ -63,10 +63,11 @@
         /* App Screen */
         .app-screen {
             width: 100%;
-            max-width: 400px;
+            max-width: 500px;
             height: auto;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                        0 8px 24px -8px rgba(0, 0, 0, 0.15);
+            /*box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                        0 8px 24px -8px rgba(0, 0, 0, 0.15);*/
+            box-shadow: none;
             border-radius: 20px;
             transition: transform 0.3s ease;
         }
@@ -616,6 +617,11 @@
             font-size: 1.1rem;
             color: #666;
         }
+
+        .premium-star {
+            width: 100px; /* Adjust size as needed */
+            margin-bottom: 10px; /* Space below the image */
+        }
     </style>
 </head>
 <body>
@@ -716,8 +722,9 @@
     <!-- Premium Features -->
     <section class="premium-section">
         <h2>Unlock Premium Features</h2>
-        <div class="premium-content">
-            <p style="color: #fff;">Get access to advanced analytics, unlimited habits, and data export capabilities</p>
+        <div class="premium-content" style="padding: 30px 10px;">
+            <img src="star.png" alt="Star" class="premium-star">
+            <p style="color: #fff; font-size: 1rem;">Get access to advanced analytics, unlimited habits, and data export capabilities</p>
             <a href="#" class="cta-button">Upgrade to Premium</a>
         </div>
     </section>
