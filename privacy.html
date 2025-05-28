@@ -3,115 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy</title>
+    <title>Privacy Policy - CountIt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #EAE3C9;
-            color: #333;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        /* Added Navbar Styles */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #333;
-            color: #fff;
-        }
-
-        .navbar a {
-            color: #fff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        .privacy-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .last-updated {
-            font-size: 0.8em;
-            color: #666;
-            margin-top: 30px;
-        }
-        
-        /* Responsive styles */
-        @media screen and (max-width: 768px) {
-            body {
-                padding: 10px;
-            }
-            
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            
-            .privacy-content {
-                padding: 15px;
-                font-size: 0.95em;
-            }
-            
-            h1 {
-                font-size: 1.8em;
-            }
-        }
-        
-        @media screen and (max-width: 480px) {
-            .navbar {
-                padding: 15px 10px;
-            }
-            
-            .navbar a {
-                margin: 5px;
-                font-size: 0.9em;
-            }
-            
-            .privacy-content {
-                padding: 10px;
-            }
+        .nav-link {
+            @apply text-slate-100 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors;
         }
     </style>
 </head>
-<body>
-    <!-- Added Navbar -->
-    <div class="navbar">
-        <div><a href="index.html">Count It. Track It.</a></div>
-        <div>
-            <a href="eula.html">EULA</a>
-            <a href="help.html">Help</a>
-            <a href="index.html#contact">Contact</a>
+<body class="bg-slate-50 text-slate-700">
+    <nav class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="counticonDarkmode.png" alt="CountIt Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x32/FFFFFF/000000?text=CountIt';">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="help.html" class="nav-link">Help</a>
+                    <a href="eula.html" class="nav-link">EULA</a>
+                </div>
+            </div>
         </div>
-    </div>
+    </nav>
 
-    <!-- Add this right after the navbar and before the h1 -->
-    <header style="text-align: center; margin: 20px 0;">
-        <img src="CountItLogo.png" alt="App Logo" style="width: 60px; height: auto;">
-    </header>
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            <header class="text-center mb-8">
+                <img src="CountItLogo.png" alt="App Logo" class="h-16 w-16 mx-auto mb-4 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/64x64/CCCCCC/FFFFFF?text=Logo';">
+                <h1 class="text-3xl font-bold text-slate-800">Privacy Policy</h1>
+            </header>
 
-    <h1>Privacy Policy</h1>
+            <div class="prose prose-slate max-w-none">
+                <p>Your privacy is important to us. This app under the name "Countit Habits" does not collect, store, or share any personal data. No user information is tracked or shared with third parties. However, during the premium subscription purchase process, Apple may collect certain information as outlined in their privacy policy.</p>
+                <p>The app offers a premium subscription to unlock additional features. All transactions are securely processed through Apple's in-app purchase system, and we do not have access to your payment information.</p>
+                <p>Although we do not collect any personal data, you have the right to request access to or deletion of your personal data if it were to be collected. For any questions regarding this privacy policy, feel free to contact me.</p>
+                <p>In a nutshell: I'm not interested in your personal life, and your data is yours alone. I'm just here to provide you with a great app experience!</p>
+                <p>Contact: <a href="mailto:gemshi@icloud.com" class="text-blue-600 hover:text-blue-700">gemshi@icloud.com</a></p>
+                <p class="text-sm text-slate-500 mt-6">Last updated: May 28, 2025</p> </div>
+        </div>
+    </main>
 
-    <div class="privacy-content">
-        <p>Your privacy is important to us. This app under the name "Countit Habits" does not collect, store, or share any personal data. No user information is tracked or shared with third parties. However, during the premium subscription purchase process, Apple may collect certain information as outlined in their privacy policy.</p>
-        
-        <p>The app offers a premium subscription to unlock additional features. All transactions are securely processed through Apple's in-app purchase system, and we do not have access to your payment information.</p>
-        
-        <p>Although we do not collect any personal data, you have the right to request access to or deletion of your personal data if it were to be collected. For any questions regarding this privacy policy, feel free to contact me.</p>
-        
-        <p>In a nutshell: I'm not interested in your personal life, and your data is yours alone. I'm just here to provide you with a great app experience!</p>
-        
-        <p>Contact: <a href="mailto:gemshi@icloud.com" style="color: inherit;"><strong>My Email</strong></a></p>
-        
-        <p class="last-updated">Last updated: 23 October 2024</p>
-    </div>
+    <footer class="bg-slate-800 text-slate-400 py-8 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="currentYearPrivacy"></span> CountIt. All rights reserved.</p>
+            <p><a href="index.html" class="hover:text-blue-400">Back to Home</a></p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYearPrivacy').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>

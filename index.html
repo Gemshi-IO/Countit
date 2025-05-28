@@ -3,773 +3,438 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Count It. Track It.</title>
+    <title>CountIt - Track Your Habits</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #EAE3C9; /* Light beige background */
-            color: #333;
-        }
-
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: #000; /* Changed to black */
-            color: #fff;
-        }
-
-        .navbar a {
-            color: #fff; /* Keep text color white */
-            margin: 0 10px;
-            text-decoration: none;
-        }
-
-        /* Main Section */
-        .main-section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .left-content {
-            flex: 1;
-            text-align: left;
-            padding: 20px;
-        }
-
-        .right-content {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        /* App Logo */
-        .app-logo {
-            width: 100px;
-            margin-bottom: 20px;
-        }
-
-        /* App Screen */
-        .app-screen {
-            width: 100%;
-            max-width: 500px;
-            height: auto;
-            /*box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25),
-                        0 8px 24px -8px rgba(0, 0, 0, 0.15);*/
-            box-shadow: none;
-            border-radius: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .app-screen:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Get iOS Image */
-        .get-ios {
-            width: 150px;
-            transition: transform 0.2s ease;
-        }
-
-        .get-ios:hover {
-            transform: scale(1.05);
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1rem;
-            color: #666;
-            margin-top: 10px;
-        }
-
-        /* Button Styles */
-        .cta-button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: #fff;
-            background-color: #0073e6;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background-color: #005bb5;
-        }
-
-        /* Footer */
-        .footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-            background-color: #000; /* Changed to black */
-            color: #fff; /* Keep text color white */
-        }
-
-        .footer a {
-            color: #fff; /* Keep text color white */
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9rem;
-        }
-
-        .footer p {
-            font-size: 0.95rem;
-        }
-
-        .footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Updated Typography */
-        .hero-text {
-            font-size: 1.3rem;
-            line-height: 1.6;
-            margin: 20px 0 30px 0;
-            color: #444;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-content {
-                flex-direction: column;
-            }
-
-            .left-content {
-                text-align: center;
-            }
-
-            .app-screen {
-                max-width: 300px;
-            }
-        }
-
-        /* Features Grid */
-        .features-section {
-            padding: 60px 20px;
-            background-color: #EAE3C9; /* Changed from #fff to match body background */
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-
-        .feature-card {
-            background: #f9f9f9;  /* Changed to a warmer white */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .feature-card h3 {
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .feature-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-card li {
-            margin: 10px 0;
-            color: #666;
-        }
-
-        /* Use Cases */
-        .use-cases-section {
-            background-color: #f0f4f8; /* Light background color */
-            padding: 60px 20px; /* Increased padding */
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px; /* Space between cards */
-        }
-
-        .use-case {
-            background: #ffffff; /* White background for cards */
-            border-radius: 12px; /* Rounded corners for cards */
-            padding: 20px; /* Padding inside cards */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for cards */
-        }
-
-        .use-case:hover {
-            transform: translateY(-5px); /* Lift effect on hover */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
-        }
-
-        h2 {
-            text-align: center; /* Center the section title */
-            margin-bottom: 40px; /* Space below the title */
-            font-size: 2.5rem; /* Larger font size for the title */
-            color: #333; /* Dark color for the title */
-        }
-
-        h3 {
-            font-size: 1.6rem; /* Slightly larger font size for headings */
-            color: #444; /* Darker color for headings */
-            margin-bottom: 10px; /* Space below headings */
-        }
-
-        p {
-            font-size: 1rem; /* Standard font size for paragraphs */
-            color: #666; /* Gray color for text */
-        }
-
-        /* Premium Features */
-        .premium-section {
-            background-color: #333;
-            color: #fff;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .premium-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        @media (max-width: 768px) {
-            .features-grid, .use-cases-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .feature-card {
-                margin: 10px;
-            }
-        }
-
-        /* Add these responsive styles to your existing <style> section */
-
-        /* Tablet and smaller desktop screens */
-        @media screen and (max-width: 1024px) {
-            .main-section {
-                padding: 40px 20px;
-            }
-
-            .hero-content {
-                gap: 20px;
-            }
-
-            .app-screen {
-                max-width: 350px;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-text {
-                font-size: 1.2rem;
-            }
-
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-                padding: 30px 20px;
-            }
-        }
-
-        /* Mobile devices */
-        @media screen and (max-width: 768px) {
-            /* Navbar adjustments */
-            .navbar {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            .navbar > div {
-                margin: 5px 0;
-            }
-
-            /* Hero section adjustments */
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .left-content {
-                text-align: center;
-                padding: 10px;
-            }
-
-            .app-screen {
-                max-width: 300px;
-                margin: 20px auto;
-            }
-
-            /* Features section adjustments */
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 20px 15px;
-            }
-
-            .feature-card {
-                padding: 20px;
-            }
-
-            /* Use cases section adjustments */
-            .use-cases-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-                padding: 20px 15px;
-            }
-
-            .use-case {
-                padding: 20px;
-            }
-
-            /* Typography adjustments */
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-                margin-bottom: 30px;
-            }
-
-            h3 {
-                font-size: 1.4rem;
-            }
-
-            .hero-text {
-                font-size: 1.1rem;
-                margin: 15px 0 25px 0;
-            }
-        }
-
-        /* Small mobile devices */
-        @media screen and (max-width: 480px) {
-            /* Further refinements for very small screens */
-            .navbar a {
-                font-size: 0.9rem;
-                margin: 0 5px;
-            }
-
-            .app-logo {
-                width: 80px;
-            }
-
-            .get-ios {
-                width: 130px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.6rem;
-            }
-
-            .feature-card, .use-case {
-                padding: 15px;
-            }
-
-            .feature-icon {
-                font-size: 2rem;
-            }
-
-            .premium-section {
-                padding: 40px 15px;
-            }
-
-            .footer {
-                padding: 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Ensure smooth transitions */
-        .hero-content, .feature-card, .use-case {
-            transition: all 0.3s ease;
-        }
-
-        /* Print styles */
-        @media print {
-            .navbar, .footer, .cta-button {
-                display: none;
-            }
-
-            body {
-                background-color: white;
-                color: black;
-            }
-
-            .app-screen {
-                max-width: 300px;
-            }
-
-            .feature-card, .use-case {
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-        }
-
-        /* Update the cta-button style in the premium section */
-        .premium-section .cta-button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            color: #000; /* Change text color to black */
-            background-color: #D1C4A3; /* Darker shade of #EAE3C9 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .premium-section .cta-button:hover {
-            background-color: #C4B696; /* Even darker on hover */
-        }
-
-        /* Add these new styles */
-        .donation-section {
-            background-color: #f9f9f9; /* Warm white */
-            padding: 20px 10px; /* Reduced padding */
-            text-align: center;
-        }
-
-        .donation-content {
-            max-width: 600px; /* Optionally reduce max width */
-            margin: 0 auto;
-        }
-
-        .donation-text {
-            color: #666;
-            margin-bottom: 10px; /* Reduced margin */
-            font-size: 0.9rem; /* Optionally reduce font size */
-        }
-
-        .donation-caption {
-            font-size: 0.8rem; /* Optionally reduce font size */
-            color: #888;
-            margin-top: 10px; /* Reduced margin */
-        }
-
-        .eth-address {
-            background: #f5f5f5;
-            padding: 15px;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin: 15px 0;
-        }
-
-        .eth-address code {
-            font-family: monospace;
-            color: #333;
-        }
-
-        .copy-button {
-            padding: 5px 15px;
-            background: #D1C4A3;
-            border: none;
-            border-radius: 4px;
-            color: #fff;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .copy-button:hover {
-            background: #C4B696;
-        }
-
-        /* Enhanced feature cards */
-        .feature-card {
-            background: #f9f9f9;  /* Changed to a warmer white */
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                        0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-                        0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Enhanced use cases section */
-        .use-cases-section {
-            background-color: #f9f9f9; /* Changed to warm white */
-            padding: 60px 20px;
-        }
-
-        .use-case {
-            background: #f8f9fa;
-            border-radius: 12px;
-            padding: 30px;
-            transition: transform 0.3s ease;
-        }
-
-        .use-case:hover {
-            transform: translateY(-3px);
-        }
-
-        /* Enhanced typography */
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            color: #444;
-            margin-bottom: 1rem;
-        }
-
-        /* Enhanced spacing */
-        section {
-            margin-bottom: 40px;
-        }
-
-        /* Smooth scrolling */
-        html {
+            font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
         }
-
-        /* Update the premium content text color */
-        .premium-content p {
-            color: #fff; /* Change text color to white */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         }
-
-        /* Centering the contact text */
-        .contact-text {
-            text-align: center;
-            margin: 20px 0;
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold text-center mb-12 text-slate-800;
         }
-
-        /* Enhanced Use Cases Section */
-        .use-cases-section {
-            background-color: #f9f9f9; /* Changed to warm white */
-            padding: 60px 20px;
+        .feature-card, .use-case-card, .testimonial-card {
+            @apply bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300;
         }
-
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 0;
+        .nav-link {
+            @apply text-slate-100 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors;
         }
-
-        .use-case {
-            text-align: center;
-            padding: 30px;
+        .footer-link {
+            @apply text-slate-400 hover:text-blue-400 transition-colors;
         }
-
-        .use-case:hover {
-            transform: translateY(-3px);
+        .cta-button {
+            @apply px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50;
         }
-
-        .use-case h3 {
-            font-size: 1.5rem;
-            color: #444;
-            margin-bottom: 1rem;
+        .secondary-cta-button {
+            @apply px-8 py-3 bg-slate-600 text-white font-semibold rounded-lg shadow-md hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-opacity-50;
         }
-
-        .use-case p {
-            font-size: 1.1rem;
-            color: #666;
+        /* Animation for elements appearing on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-
-        .premium-star {
-            width: 100px; /* Adjust size as needed */
-            margin-bottom: 10px; /* Space below the image */
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
-<body>
-    <!-- Navbar -->
-    <div class="navbar">
-        <div><a href="#">Count It. Track It.</a></div>
-        <div>
-            <a href="privacy.html">Privacy</a>
-            <a href="help.html">Help</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </div>
+<body class="bg-slate-50 text-slate-700">
 
-    <!-- Main Section -->
-    <section class="main-section">
-        <div class="hero-content">
-            <div class="left-content">
-                <img src="CountItLogo.png" alt="App Logo" class="app-logo">
-                <h1>CountIt</h1>
-                <p class="hero-text">Your Personal Habit Tracking Companion</p>
-                <a href="https://apps.apple.com/app/countit-habits/id6737612812" target="_blank">
-                    <img src="getios.png" alt="Download on iOS" class="get-ios">
-                </a>
+    <nav class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="counticonDarkmode.png" alt="CountIt Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x32/FFFFFF/000000?text=CountIt';">
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#features" class="nav-link">Features</a>
+                        <a href="#use-cases" class="nav-link">Use Cases</a>
+                        <a href="#premium" class="nav-link">Premium</a>
+                        <a href="help.html" class="nav-link">Help</a>
+                        <a href="#contact" class="nav-link">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-            <div class="right-content">
-                <img src="Frame.png" alt="App Screen" class="app-screen">
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#features" class="block nav-link text-slate-300 hover:bg-slate-700 hover:text-white">Features</a>
+                <a href="#use-cases" class="block nav-link text-slate-300 hover:bg-slate-700 hover:text-white">Use Cases</a>
+                <a href="#premium" class="block nav-link text-slate-300 hover:bg-slate-700 hover:text-white">Premium</a>
+                <a href="help.html" class="block nav-link text-slate-300 hover:bg-slate-700 hover:text-white">Help</a>
+                <a href="#contact" class="block nav-link text-slate-300 hover:bg-slate-700 hover:text-white">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+                <div class="md:w-1/2 md:text-left animate-on-scroll">
+                    <img src="CountItLogo.png" alt="App Logo" class="h-20 w-20 mx-auto md:mx-0 mb-6 rounded-full shadow-lg" onerror="this.onerror=null; this.src='https://placehold.co/80x80/FFFFFF/000000?text=Logo';">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+                        CountIt: Your Personal Habit Tracker
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 text-slate-200">
+                        Effortlessly track habits, build routines, and gain insights into your progress.
+                        Simple, private, and powerful.
+                    </p>
+                    <a href="https://apps.apple.com/app/countit-habits/id6737612812" target="_blank" class="inline-block">
+                        <img src="getios.png" alt="Download on the App Store" class="h-12 md:h-14 hover:opacity-90 transition-opacity" onerror="this.onerror=null; this.src='https://placehold.co/150x50/FFFFFF/000000?text=Get+on+iOS';">
+                    </a>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0 animate-on-scroll" style="transition-delay: 0.2s;">
+                    <img src="Frame.png" alt="App Screenshot" class="rounded-xl shadow-2xl mx-auto max-w-xs md:max-w-sm lg:max-w-md" onerror="this.onerror=null; this.src='https://placehold.co/300x600/CCCCCC/FFFFFF?text=App+Screenshot';">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="py-16 md:py-24 bg-slate-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title animate-on-scroll">Key Features</h2><br>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="feature-card animate-on-scroll">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Smart Habit Tracking</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Track any habit with custom icons & colors</li>
+                        <li>Intelligent categorization</li>
+                        <li>Easy-to-use interface for quick logging</li>
+                    </ul>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.1s;">
+                     <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12A2.25 2.25 0 0020.25 14.25V3M3.75 3H1.5m11.25 0h2.25m0 0h7.5M3.75 3A2.25 2.25 0 016 5.25v9A2.25 2.25 0 013.75 16.5M20.25 3h2.25m0 0A2.25 2.25 0 0124.75 5.25v9a2.25 2.25 0 01-2.25 2.25M3.75 16.5c-.621 0-1.125-.504-1.125-1.125V6.75" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Comprehensive Analytics</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Daily, Weekly, Monthly, Yearly insights</li>
+                        <li>Visual charts and statistics</li>
+                        <li>Smart reflections tailored to habit type</li>
+                    </ul>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Widget & Shortcut Support</h3>
+                    </div>
+                     <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Quick access with Home Screen widgets</li>
+                        <li>Automate tracking with iOS Shortcuts</li>
+                        <li>Seamless integration into your workflow</li>
+                    </ul>
+                </div>
+                 <div class="feature-card animate-on-scroll" style="transition-delay: 0.3s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.646.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 1.255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.333.183-.583.495-.646.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.645-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.759 6.759 0 010-1.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+                           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Personalization</h3>
+                    </div>
+                     <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Wide range of emojis and colors</li>
+                        <li>Customize your tracking experience</li>
+                        <li>Support for multiple habit categories</li>
+                    </ul>
+                </div>
+                 <div class="feature-card animate-on-scroll" style="transition-delay: 0.4s;">
+                     <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Privacy-Focused</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>All data stored locally on your device</li>
+                        <li>No account required, no cloud sync</li>
+                        <li>Your habits, your privacy, always</li>
+                    </ul>
+                </div>
+                <div class="feature-card animate-on-scroll" style="transition-delay: 0.5s;">
+                    <div class="flex items-center mb-4">
+                        <svg class="h-10 w-10 text-blue-500 mr-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                        </svg>
+                        <h3 class="text-xl font-semibold text-slate-800">Data Portability</h3>
+                    </div>
+                    <ul class="list-disc list-inside text-slate-600 space-y-1">
+                        <li>Export your habits and progress data</li>
+                        <li>Import habits from CSV files</li>
+                        <li>Backup and restore your tracking history</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Grid -->
-    <section class="features-section">
-        <h2>Key Features</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <i class="feature-icon">📊</i>
-                <h3>Smart Habit Tracking</h3>
-                <ul>
-                    <li>Track any habit with customizable icons and colors</li>
-                    <li>Intelligent categorization for different types of habits</li>
-                    <li>Easy-to-use interface for quick logging</li>
-                </ul>
-            </div>
-            
-            <div class="feature-card">
-                <i class="feature-icon">📈</i>
-                <h3>Comprehensive Analytics</h3>
-                <ul>
-                    <li>Detailed trend summaries: Daily, Weekly, Monthly, and Yearly insights</li>
-                    <li>Visual charts and statistics to track your progress</li>
-                    <li>Smart reflections tailored to your habit type</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <i class="feature-icon">🎨</i>
-                <h3>Personalization</h3>
-                <ul>
-                    <li>Choose from a wide range of emojis and colors</li>
-                    <li>Customize your tracking experience</li>
-                    <li>Support for multiple habit categories</li>
-                </ul>
-            </div>
-
-            <div class="feature-card">
-                <i class="feature-icon">🔒</i>
-                <h3>Privacy-Focused</h3>
-                <ul>
-                    <li>All data stored locally on your device</li>
-                    <li>No account required</li>
-                    <li>Your habits, your privacy</li>
-                </ul>
+    <section id="use-cases" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title animate-on-scroll">Transform Your Life with CountIt</h2><br>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="use-case-card text-center animate-on-scroll">
+                    <img src="healthfitness.png" alt="Health Icon" class="mx-auto mb-4 rounded-lg max-w-[40%]">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Health & Fitness</h3>
+                    <p class="text-slate-600">Track workouts, water intake, and healthy eating habits.</p>
+                </div>
+                <div class="use-case-card text-center animate-on-scroll" style="transition-delay: 0.1s;">
+                    <img src="personaldevelopment.png" alt="Development Icon" class="mx-auto mb-4 rounded-lg max-w-[40%]">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Personal Development</h3>
+                    <p class="text-slate-600">Monitor reading, learning, and meditation practices.</p>
+                </div>
+                <div class="use-case-card text-center animate-on-scroll" style="transition-delay: 0.2s;">
+                     <img src="productivity.png" alt="Productivity Icon" class="mx-auto mb-4 rounded-lg max-w-[40%]">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Productivity</h3>
+                    <p class="text-slate-600">Enhance work routines and daily task management.</p>
+                </div>
+                <div class="use-case-card text-center animate-on-scroll" style="transition-delay: 0.3s;">
+                    <img src="breakbadhabits.png" alt="Negative Habits Icon" class="mx-auto mb-4 rounded-lg max-w-[40%]">
+                    <h3 class="text-xl font-semibold text-slate-800 mb-2">Break Bad Habits</h3>
+                    <p class="text-slate-600">Identify and reduce negative habits for a better you.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Use Cases -->
-    <section class="use-cases-section">
-        <h2>Transform Your Life</h2>
-        <div class="use-cases-grid">
-            <div class="use-case">
-                <h3>Health & Fitness</h3>
-                <p>Track workouts, water intake, and healthy eating habits</p>
+    <section id="premium" class="py-16 md:py-24 bg-slate-800 text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <img src="star.png" alt="Premium Star" class="h-20 w-20 mx-auto mb-6" onerror="this.onerror=null; this.src='https://placehold.co/80x80/FFD700/000000?text=★';">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 animate-on-scroll">Unlock Premium Features</h2>
+            <p class="text-lg md:text-xl mb-8 text-slate-300 max-w-2xl mx-auto animate-on-scroll" style="transition-delay: 0.1s;">
+                Get access to advanced analytics, unlimited habits, data export capabilities, and more exclusive features to supercharge your tracking.
+            </p>
+            <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                <button onclick="handlePremiumClick()" class="cta-button bg-yellow-500 hover:bg-yellow-600 text-slate-900">
+                    Upgrade to Premium
+                </button>
+                 <p id="premiumMessage" class="mt-4 text-sm text-slate-400"></p>
             </div>
-            <div class="use-case">
-                <h3>Personal Development</h3>
-                <p>Monitor reading, learning, and meditation practices</p>
-            </div>
-            <div class="use-case">
-                <h3>Productivity</h3>
-                <p>Enhance work routines and daily task management</p>
-            </div>
-            <div class="use-case">
-                <h3>Tracking Negative Habits</h3>
-                <p>Identify and monitor negative habits to help reduce their frequency and impact on your life.</p>
+        </div>
+    </section>
+    
+    <section id="testimonials" class="py-16 md:py-24 bg-slate-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title animate-on-scroll">Loved by Users</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="testimonial-card animate-on-scroll">
+                    <p class="text-slate-600 italic mb-4">"CountIt has revolutionized how I track my daily goals. So simple and effective!"</p>
+                    <p class="font-semibold text-slate-800">- Alex P.</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <p class="text-slate-600 italic mb-4">"The privacy focus is a huge plus for me. Finally, an app that respects my data."</p>
+                    <p class="font-semibold text-slate-800">- Jamie L.</p>
+                </div>
+                <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <p class="text-slate-600 italic mb-4">"Widgets and shortcuts make it so easy to log habits without even opening the app. A game changer!"</p>
+                    <p class="font-semibold text-slate-800">- Casey B.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Premium Features -->
-    <section class="premium-section">
-        <h2>Unlock Premium Features</h2>
-        <div class="premium-content" style="padding: 30px 10px;">
-            <img src="star.png" alt="Star" class="premium-star">
-            <p style="color: #fff; font-size: 1rem;">Get access to advanced analytics, unlimited habits, and data export capabilities</p>
-            <a href="#" class="cta-button">Upgrade to Premium</a>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="main-section">
-        <h2>Contact Us</h2>
-        <p class="contact-text">Have questions? Reach out to us at <a href="mailto:gemshi@icloud.com" style="color: inherit; font-weight: bold;">our email</a></p>
-    </section>
-
-    <!-- Add this before the footer -->
-    <section class="donation-section">
-        <div class="donation-content">
-            <h3>Support the Development</h3>
-            <p class="donation-text">If you find CountIt helpful, consider supporting its development</p>
-            <div class="eth-address">
-                <span>ETH:</span>
-                <code>0x943FA945b349fc6c426f63d4772580f50368d957</code>
-                <button class="copy-button" onclick="copyAddress()">Copy</button>
+    <section id="contact" class="py-16 md:py-24 bg-slate-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="section-title animate-on-scroll">Get in Touch</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto animate-on-scroll" style="transition-delay: 0.1s;">
+                Have questions, feedback, or need support? We'd love to hear from you!
+            </p>
+            <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                <a href="mailto:gemshi@icloud.com" class="cta-button">Email Us: gemshi@icloud.com</a>
             </div>
-            <p class="donation-caption">Your support helps maintain and improve CountIt ❤️</p>
         </div>
     </section>
 
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2024 Count It. Track It. All rights reserved.</p>
-        <p>
-            <a href="privacy.html">Privacy Policy</a> |
-            <a href="help.html">Help</a> |
-            <a href="#contact">Contact</a> |
-            <a href="eula.html">EULA</a> <!-- Added EULA link -->
-        </p>
-    </div>
+    <section id="donation" class="py-16 md:py-24">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="section-title animate-on-scroll">Support CountIt's Development</h2>
+            <p class="text-lg md:text-xl mb-8 max-w-xl mx-auto animate-on-scroll" style="transition-delay: 0.1s;">
+                If you find CountIt helpful, consider supporting its continued development and improvement.
+            </p>
+            <div class="bg-white p-6 rounded-xl shadow-lg inline-block animate-on-scroll" style="transition-delay: 0.2s;">
+                <p class="text-slate-700 font-medium mb-2">ETH Address:</p>
+                <code class="block bg-slate-100 p-3 rounded-md text-sm text-slate-800 break-all mb-3">0x943FA945b349fc6c426f63d4772580f50368d957</code>
+                <button onclick="copyEthAddress(this)" class="secondary-cta-button text-sm py-2 px-4">
+                    Copy Address
+                </button>
+            </div>
+            <p class="mt-6 text-sm text-slate-500 animate-on-scroll" style="transition-delay: 0.3s;">Your support helps us add new features and keep the app running smoothly. Thank you! 🙏</p>
+        </div>
+    </section>
 
-    <!-- Add this script at the end of body -->
+    <footer class="bg-slate-800 text-slate-400 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">CountIt</h5>
+                    <p class="text-sm">Track habits, build routines, achieve your goals. Simple, private, powerful.</p>
+                     <img src="counticonDarkmode.png" alt="App Logo" class="h-10 w-10 mt-4 rounded-md" onerror="this.onerror=null; this.src='https://placehold.co/40x40/FFFFFF/000000?text=Logo';">
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#features" class="footer-link">Features</a></li>
+                        <li><a href="help.html" class="footer-link">Help & Support</a></li>
+                        <li><a href="#contact" class="footer-link">Contact Us</a></li>
+                         <li><a href="https://apps.apple.com/app/countit-habits/id6737612812" target="_blank" class="footer-link">Download App</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold text-white mb-3">Legal</h5>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="eula.html" class="footer-link">EULA</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> CountIt. All rights reserved.</p>
+                <p>Designed with ❤️</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-    function copyAddress() {
-        navigator.clipboard.writeText('0x943FA945b349fc6c426f63d4772580f50368d957');
-        const button = document.querySelector('.copy-button');
-        button.textContent = 'Copied!';
-        setTimeout(() => button.textContent = 'Copy', 2000);
-    }
+        // Mobile menu toggle
+        const menuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', () => {
+            const expanded = menuButton.getAttribute('aria-expanded') === 'true' || false;
+            menuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+            // Toggle icons
+            menuButton.querySelectorAll('svg').forEach(icon => icon.classList.toggle('hidden'));
+        });
+
+        // Smooth scroll for anchor links in mobile menu
+        mobileMenu.querySelectorAll('a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.hash !== "") {
+                     // Close mobile menu on link click
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.classList.add('hidden');
+                    menuButton.querySelectorAll('svg').forEach(icon => {
+                        if(icon.classList.contains('block')) icon.classList.remove('hidden'); else icon.classList.add('hidden');
+                    });
+                     // Actual scroll
+                    const hash = this.hash;
+                    const targetElement = document.querySelector(hash);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const offset = document.querySelector('nav').offsetHeight; // Nav height
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = targetElement.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Copy ETH Address
+        function copyEthAddress(buttonElement) {
+            const address = '0x943FA945b349fc6c426f63d4772580f50368d957';
+            // Use modern clipboard API if available, fallback to execCommand
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(address).then(() => {
+                    buttonElement.textContent = 'Copied!';
+                    setTimeout(() => { buttonElement.textContent = 'Copy Address'; }, 2000);
+                }).catch(err => {
+                    console.error('Failed to copy with navigator.clipboard:', err);
+                    fallbackCopyTextToClipboard(address, buttonElement);
+                });
+            } else {
+                fallbackCopyTextToClipboard(address, buttonElement);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text, buttonElement) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            // Avoid scrolling to bottom
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    buttonElement.textContent = 'Copied!';
+                    setTimeout(() => { buttonElement.textContent = 'Copy Address'; }, 2000);
+                } else {
+                    buttonElement.textContent = 'Copy Failed';
+                     console.error('Fallback: Copying text command was unsuccessful');
+                }
+            } catch (err) {
+                 buttonElement.textContent = 'Copy Failed';
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        // Simple Premium Button Handler
+        function handlePremiumClick() {
+            const premiumMessage = document.getElementById('premiumMessage');
+            premiumMessage.textContent = 'Premium features are unlocked within the app. Download CountIt to get started!';
+            // Optionally, you can redirect to the app store here:
+            // window.location.href = "https://apps.apple.com/app/countit-habits/id6737612812";
+        }
+
+        // Animate on scroll
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target); // Optional: stop observing once animated
+                }
+            });
+        }, { threshold: 0.1 }); // Trigger when 10% of the element is visible
+
+        animatedElements.forEach(el => {
+            observer.observe(el);
+        });
+
     </script>
 </body>
 </html>
