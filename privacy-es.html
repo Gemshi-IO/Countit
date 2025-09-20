@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Privacidad - CountIt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply text-slate-100 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+    <nav class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="counticonDarkmode.png" alt="Logo de CountIt" onerror="this.onerror=null; this.src='https://placehold.co/100x32/FFFFFF/000000?text=CountIt';">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="nav-link">Inicio</a>
+                    <a href="help.html" class="nav-link">Ayuda</a>
+                    <a href="eula.html" class="nav-link">EULA</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            <header class="text-center mb-8">
+                <img src="CountItLogo.png" alt="Logo de la App" class="h-16 w-16 mx-auto mb-4 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/64x64/CCCCCC/FFFFFF?text=Logo';">
+                <h1 class="text-3xl font-bold text-slate-800">Política de Privacidad</h1>
+            </header>
+
+            <div class="prose prose-slate max-w-none">
+                <p>Su privacidad es importante para nosotros. Esta aplicación bajo el nombre "Countit Habits" no recopila, almacena ni comparte ningún dato personal. No se rastrea información del usuario ni se comparte con terceros. Sin embargo, durante el proceso de compra de la suscripción premium, Apple puede recopilar cierta información según se describe en su política de privacidad.</p>
+                <p>La aplicación ofrece una suscripción premium para desbloquear funciones adicionales. Todas las transacciones se procesan de forma segura a través del sistema de compras dentro de la aplicación de Apple, y no tenemos acceso a su información de pago.</p>
+                <p>Aunque no recopilamos ningún dato personal, usted tiene el derecho de solicitar acceso o eliminación de sus datos personales si llegaran a ser recopilados. Para cualquier pregunta relacionada con esta política de privacidad, no dude en contactarme.</p>
+                <p>En resumen: no me interesa su vida personal, y sus datos son solo suyos. ¡Solo estoy aquí para brindarle una excelente experiencia con la aplicación!</p>
+                <p>Contacto: <a href="mailto:gemshi@icloud.com" class="text-blue-600 hover:text-blue-700">gemshi@icloud.com</a></p>
+                <p class="text-sm text-slate-500 mt-6">Última actualización: 28 de mayo de 2025</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-8 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="currentYearPrivacyEs"></span> CountIt. Todos los derechos reservados.</p>
+            <p><a href="index.html" class="hover:text-blue-400">Volver al Inicio</a></p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYearPrivacyEs').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

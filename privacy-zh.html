@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - CountIt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .nav-link {
+            @apply text-slate-100 hover:text-blue-300 px-3 py-2 rounded-md text-sm font-medium transition-colors;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700">
+    <nav class="bg-slate-800 shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="flex-shrink-0">
+                        <img class="h-8 w-auto" src="counticonDarkmode.png" alt="CountIt Logo" onerror="this.onerror=null; this.src='https://placehold.co/100x32/FFFFFF/000000?text=CountIt';">
+                    </a>
+                </div>
+                <div>
+                    <a href="index.html" class="nav-link">首页</a>
+                    <a href="help.html" class="nav-link">帮助</a>
+                    <a href="eula.html" class="nav-link">最终用户许可协议</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div class="max-w-3xl mx-auto bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+            <header class="text-center mb-8">
+                <img src="CountItLogo.png" alt="应用图标" class="h-16 w-16 mx-auto mb-4 rounded-full" onerror="this.onerror=null; this.src='https://placehold.co/64x64/CCCCCC/FFFFFF?text=Logo';">
+                <h1 class="text-3xl font-bold text-slate-800">隐私政策</h1>
+            </header>
+
+            <div class="prose prose-slate max-w-none">
+                <p>您的隐私对我们很重要。名为"Countit Habits"的此应用程序不会收集、存储或共享任何个人数据。不会跟踪用户信息或与第三方共享。但是，在高级订阅购买过程中，苹果可能会根据其隐私政策收集某些信息。</p>
+                <p>该应用程序提供高级订阅以解锁其他功能。所有交易均通过苹果的应用内购买系统安全处理，我们无法访问您的付款信息。</p>
+                <p>虽然我们不收集任何个人数据，但如果您要收集个人数据，您有权要求访问或删除您的个人数据。如有任何关于此隐私政策的问题，请随时与我联系。</p>
+                <p>简而言之：我对您的个人生活不感兴趣，您的数据只属于您。我只是在这里为您提供出色的应用体验！</p>
+                <p>联系方式：<a href="mailto:gemshi@icloud.com" class="text-blue-600 hover:text-blue-700">gemshi@icloud.com</a></p>
+                <p class="text-sm text-slate-500 mt-6">最后更新：2025年5月28日</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-slate-800 text-slate-400 py-8 mt-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; <span id="currentYearPrivacyZh"></span> CountIt. 保留所有权利。</p>
+            <p><a href="index.html" class="hover:text-blue-400">返回首页</a></p>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('currentYearPrivacyZh').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
